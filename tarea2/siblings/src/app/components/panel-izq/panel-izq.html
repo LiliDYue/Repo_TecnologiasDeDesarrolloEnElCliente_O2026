@@ -1,0 +1,13 @@
+<h2>Lista de Album's</h2>
+
+<ul>
+  @for (elemento of elementos; track elemento.album) {
+    <li
+      (click)="seleccionar(elemento)"
+      [class.seleccionado]="elemento === seleccionado">
+
+      {{ elemento.album }}
+
+    </li>
+  }
+</ul>

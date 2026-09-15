@@ -1,0 +1,26 @@
+h2{
+    margin-left: -150px;
+}
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+.panel-derecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+button {
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0b3991;
+    color: white;
+}

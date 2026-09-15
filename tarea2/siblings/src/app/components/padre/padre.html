@@ -1,0 +1,20 @@
+<div class="contenedor">
+
+  <div class="izquierdo">
+    <app-panel-izq
+      [elementos]="elementos"
+      [seleccionado]="seleccionado"
+      (elementoSeleccionado)="seleccionarElemento($event)">
+    </app-panel-izq>
+  </div>
+
+  <div class="derecho">
+    <app-panel-der
+      [seleccionado]="seleccionado"
+      (limpiar)="limpiarSeleccion()">
+    </app-panel-der>
+  </div>
+
+</div>
+
+
