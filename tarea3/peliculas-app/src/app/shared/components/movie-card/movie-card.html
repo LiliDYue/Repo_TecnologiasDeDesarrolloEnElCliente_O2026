@@ -1,0 +1,38 @@
+
+<article class="movie-card" appHighlight>
+  <img
+    [src]="movie.imageUrl"
+    [alt]="'Póster de ' + movie.title"
+  />
+
+  <div class="movie-info">
+    <h2>{{ movie.title }}</h2>
+
+    <p><strong>Año:</strong> {{ movie.year }}</p>
+    <p><strong>Género:</strong> {{ movie.genre }}</p>
+
+    <p class="director">
+      <strong>Director:</strong> {{ movie.director }}
+    </p>
+
+    <p class="producer">
+      <strong>Productor:</strong> {{ movie.producer }}
+    </p>
+
+    <a
+      [routerLink]="['/movies', movie.id]"
+      class="details-link"
+    >
+      Ver detalles
+    </a>
+
+    <button
+      *ngIf="showRemoveButton"
+      type="button"
+      class="remove-button"
+      (click)="onRemoveFavorite()"
+    >
+      Quitar de favoritos
+    </button>
+  </div>
+</article>

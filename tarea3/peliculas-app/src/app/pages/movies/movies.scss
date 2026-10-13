@@ -1,0 +1,147 @@
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #222;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #666;
+}
+
+.favorites-link,
+.details-link {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #283593;
+  color: white;
+  text-decoration: none;
+}
+
+.filters {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f4f5f9;
+  border-radius: 10px;
+}
+
+.filters h2 {
+  margin-top: 0;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.filter-grid input,
+.filter-grid button {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.filter-grid button {
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.results-count {
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+  gap: 22px;
+  justify-content: start;
+}
+
+.movie-card {
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 8%);
+}
+
+.movie-card img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.movie-info {
+  padding: 16px;
+}
+
+.movie-info h2 {
+  margin-top: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  min-height: 56px;
+}
+
+.movie-info p {
+  line-height: 1.4;
+}
+
+.movie-info p:has(strong) {
+  min-height: 39px;
+}
+
+.details-link {
+  display: block;
+  width: fit-content;
+  margin: 16px auto 0;
+  text-align: center;
+}
+
+.empty-message {
+  padding: 24px;
+  text-align: center;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 14px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.producer {
+  line-height: 1.4;
+  height: 4.2em;
+  overflow: hidden;
+}
+
+

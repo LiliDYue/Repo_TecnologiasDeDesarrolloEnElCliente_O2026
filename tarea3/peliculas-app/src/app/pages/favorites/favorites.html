@@ -1,0 +1,30 @@
+
+<div class="page-container">
+    <header class="page-header">
+    <div>
+        <h1>Mis películas favoritas</h1>
+        <p>Aquí encontrarás las películas que has guardado.</p>
+    </div>
+
+    <a routerLink="/" class="back-link">Volver a películas</a>
+    </header>
+
+    <p class="results-count">
+    Favoritos guardados: {{ favorites.length }}
+    </p>
+
+    <section class="movie-grid" *ngIf="favorites.length > 0">
+    <app-movie-card
+        *ngFor="let movie of favorites"
+        [movie]="movie"
+        [showRemoveButton]="true"
+        (removeFavorite)="removeFavorite($event)"
+    ></app-movie-card>
+    </section>
+
+    <div *ngIf="favorites.length === 0" class="empty-state">
+    <h2>Aún no tienes favoritos</h2>
+    <p>Explora las películas y agrega las que más te gusten.</p>
+    <a routerLink="/" class="details-link">Explorar películas</a>
+    </div>
+</div>

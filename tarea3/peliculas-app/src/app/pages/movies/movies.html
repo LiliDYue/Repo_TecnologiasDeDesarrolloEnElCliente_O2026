@@ -1,0 +1,77 @@
+
+<div class="page-container">
+  <header class="page-header">
+    <div>
+      <h1>Películas de los 90</h1>
+      <p>Explora nuestra colección de películas clásicas.</p>
+    </div>
+
+    <a routerLink="/favorites" class="favorites-link">
+      Ver favoritos
+    </a>
+  </header>
+
+  <section class="filters">
+    <h2>Buscar películas</h2>
+
+    <div class="filter-grid">
+      <input
+        type="text"
+        placeholder="Título"
+        [(ngModel)]="titleFilter"
+        (ngModelChange)="filterMovies()"
+      />
+
+      <input
+        type="text"
+        placeholder="Director"
+        [(ngModel)]="directorFilter"
+        (ngModelChange)="filterMovies()"
+      />
+
+      <input
+        type="text"
+        placeholder="Productor"
+        [(ngModel)]="producerFilter"
+        (ngModelChange)="filterMovies()"
+      />
+
+      <input
+        type="text"
+        placeholder="Género"
+        [(ngModel)]="genreFilter"
+        (ngModelChange)="filterMovies()"
+      />
+
+      <input
+        type="number"
+        placeholder="Año"
+        min="1990"
+        max="1999"
+        [(ngModel)]="yearFilter"
+        (ngModelChange)="filterMovies()"
+      />
+
+      <button type="button" (click)="clearFilters()">
+        Limpiar filtros
+      </button>
+    </div>
+  </section>
+
+  <p class="results-count">
+    Películas encontradas: {{ filteredMovies.length }}
+  </p>
+
+  
+  <section class="movie-grid">
+    <app-movie-card
+      *ngFor="let movie of filteredMovies"
+      [movie]="movie"
+    ></app-movie-card>
+  </section>
+
+
+  <p *ngIf="filteredMovies.length === 0" class="empty-message">
+    No se encontraron películas con esos filtros.
+  </p>
+</div>
