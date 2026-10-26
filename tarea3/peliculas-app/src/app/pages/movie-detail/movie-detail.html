@@ -1,0 +1,41 @@
+
+<div class="detail-container" *ngIf="movie; else notFound">
+  <a routerLink="/" class="back-link">← Volver a películas</a>
+
+  <article class="movie-detail">
+    <img
+      class="poster"
+      [src]="movie.imageUrl"
+      [alt]="'Póster de ' + movie.title"
+    />
+
+    <div class="movie-info">
+      <h1>{{ movie.title }}</h1>
+
+      <p><strong>Director:</strong> {{ movie.director }}</p>
+      <p><strong>Productor:</strong> {{ movie.producer }}</p>
+      <p><strong>Género:</strong> {{ movie.genre }}</p>
+      <p><strong>Año:</strong> {{ movie.year }}</p>
+
+      <h2>Sinopsis</h2>
+      <p>{{ movie.description }}</p>
+
+      <button type="button" (click)="toggleFavorite()">
+        {{ favoritesService.isFavorite(movie.id)
+          ? 'Quitar de favoritos'
+          : 'Agregar a favoritos' }}
+      </button>
+
+      <a routerLink="/favorites" class="favorites-link">
+        Ver favoritos
+      </a>
+    </div>
+  </article>
+</div>
+
+<ng-template #notFound>
+  <div class="detail-container">
+    <h1>Película no encontrada</h1>
+    <a routerLink="/">Volver al listado</a>
+  </div>
+</ng-template>
