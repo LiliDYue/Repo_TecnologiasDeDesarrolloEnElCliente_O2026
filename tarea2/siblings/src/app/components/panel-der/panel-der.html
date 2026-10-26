@@ -1,0 +1,32 @@
+<div class="panel-derecho">
+
+  <h2>Detalles del Album</h2>
+  @if (seleccionado) {
+
+
+    <p>
+      <strong>Título:</strong>
+      {{ seleccionado.album }}
+    </p>
+
+    <p>
+      <strong>Banda:</strong>
+      {{ seleccionado.banda }}
+    </p>
+
+    <p>
+      <strong>Año:</strong>
+      {{ seleccionado.anio }}
+    </p>
+
+    <button (click)="limpiarSeleccion()">
+      Limpiar
+    </button>
+
+  } @else {
+
+    <p>No hay ningún elemento seleccionado.</p>
+
+  }
+
+</div>
